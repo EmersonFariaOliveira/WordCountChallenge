@@ -1,0 +1,30 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for Word Count Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmersonFariaOliveira/WordCountChallenge.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Emerson Faria de Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmersonFariaOliveira/WordCountChallenge/issues"
+  },
+  "homepage": "https://github.com/EmersonFariaOliveira/WordCountChallenge#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
