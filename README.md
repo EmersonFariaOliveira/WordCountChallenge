@@ -42,10 +42,19 @@ It's a user-facing form that counts the number of words in a block of text. The 
   $ npx lite-server
   ```
 ## Opening and testing
-- Open the application in your web browser:
+- Open the application in your web browser. Use Chrome or Firefox for a better experience.
 ```
 http://localhost:3000/
 ```
+
+- Web Browser
+
+<img src="./images/FrontendWebBrowser.png" alt="drawing" width="800"/>
+
+
+- Smartphone
+
+<img src="./images/FrontendSmartPhone.jpeg" alt="drawing" width="200"/>
 
 ## Directory Hierarchy
 ```
