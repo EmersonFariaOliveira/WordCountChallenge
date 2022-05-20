@@ -19,7 +19,6 @@ It's a user-facing form that counts the number of words in a block of text. The 
 * Clone the git repository:
   ```
   $ git clone https://github.com/EmersonFariaOliveira/WordCountChallenge.git
-  $ cd WordCountChallenge
   ```
 ### BackEnd
 * Open a new terminal and install the required dependencies
