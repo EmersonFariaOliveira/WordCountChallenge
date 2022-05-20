@@ -51,12 +51,13 @@
 
 <script>
 
-
     async function getContent() {
 
+        // Getting the text content from the form
         let text = document.getElementById("exampleFormControlTextarea1").value
 
         try {
+            // POST Request for the backend
             const response = await fetch("http://localhost:8000/wordCounting",
                 {
                     method: 'POST',
@@ -67,9 +68,10 @@
                     body: JSON.stringify({ "text": text })
                 })
 
-            // console.log(response)
+            // JSON parser for response received from the backend
             const data = await response.json()
 
+            // Check the response status
             switch (response.status) {
                 case 200:
                     document.getElementById("successRequest").innerHTML = "Number of words: " + data.count;
@@ -85,14 +87,11 @@
                     break;
             }
 
-            console.log(data)
         } catch (error) {
             console.log("Request Problem")
             console.log(error)
         }
     }
-
-    // getContent()
 
 </script>
 

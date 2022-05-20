@@ -1,7 +1,9 @@
+// Imports
 const cors = require('cors')
 const express = require('express')
 const bodyParser = require('body-parser');
 
+// Creating the server object and define the port
 const app = express()
 const port = 8000
 
@@ -9,13 +11,13 @@ const port = 8000
 app.use(bodyParser.json());
 app.use(cors())
 
+// Default route
 app.get('/', (req, res) => {
 	res.send({message:'Hello World!'})
 })
 
+// Main route of Word Counting
 app.post('/wordCounting', (req, res) => {
-
-	// console.log(req.body)
 
 	// Initializing textLen variable with an size 0
 	let textLen = 0
@@ -23,11 +25,17 @@ app.post('/wordCounting', (req, res) => {
 	// Check if text is present on json received
 	if (req.body.text) {
 		let text = req.body.text
-		// Get the number of words from text received
-		// match any non-whitespace sequences
-		textLen = text.match(/\S+/g).length
+		try {
+			// Get the number of words from text received
+			// match any non-whitespace sequences
+			textLen = text.match(/\S+/g).length
+		} catch (error) {
+			console.log(error.message)
+			textLen = 0
+		}
 	}
 
+	// If testLen > 0
 	if (textLen) {
 		res.status(200).send({"count":textLen})
 	} else {
@@ -36,6 +44,7 @@ app.post('/wordCounting', (req, res) => {
 
 })
 
+// Service start
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`)
 })
